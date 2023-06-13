@@ -7,15 +7,19 @@ export interface ITask {
     created_date: number;
 }
 
-export interface IListItem{
+export interface IListItem {
     task: ITask;
+
     deleteTask(taskIdToDelete: number): void;
 }
 
 export interface ITaskForm {
     taskText: string;
     isValid: boolean;
+
     validate(): void;
-    handleChange(event: ChangeEvent<HTMLInputElement>) : void;
-    addTask() : void;
+
+    handleChange(event: ChangeEvent<HTMLInputElement>): void;
+
+    addTask(): void;
 }

@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import {Container, Row, Col, Alert, ListGroup} from 'react-bootstrap';
 import {ITask} from './Interfaces';
 import {TodoForm} from './Components/TodoForm';
