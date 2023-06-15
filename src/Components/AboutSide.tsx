@@ -8,11 +8,11 @@ const AboutSide = () => {
             <h5>About Me</h5>
             <div className="d-flex align-items-center github">
                 <FaGithub/>
-                <a href="https://github.com/RizaMamedow" className="m-2">RizaMamedow</a>
+                <a href="https://github.com/RizaMamedow" target="_blank" className="m-2">RizaMamedow</a>
             </div>
             <div className="d-flex align-items-center telegram">
                 <FaTelegram/>
-                <a href="https://t.me/ponchik_kruglyy" className="m-2">@ponchik_kruglyy</a>
+                <a href="https://t.me/ponchik_kruglyy" target="_blank" className="m-2">@ponchik_kruglyy</a>
             </div>
         </div>
     );

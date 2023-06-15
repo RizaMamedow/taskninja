@@ -11,6 +11,7 @@
     "@types/react": "^18.2.11",
     "@types/react-dom": "^18.2.5",
     "bootstrap": "^5.3.0",
+    "json-server": "^0.17.3",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
@@ -21,10 +22,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "app": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch db.json --port 3030"
   },
   "eslintConfig": {
     "extends": [

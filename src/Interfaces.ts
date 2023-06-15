@@ -4,22 +4,27 @@ export interface ITask {
     id: number;
     text: string;
     isImportant: boolean;
+    isCompleted: boolean;
     created_date: number;
 }
 
 export interface IListItem {
     task: ITask;
 
-    deleteTask(taskIdToDelete: number): void;
+    deleteTask(taskId: number): void;
+    completeTask(taskId: number): void;
 }
 
 export interface ITaskForm {
     taskText: string;
     isValid: boolean;
+    isImportant: boolean;
 
     validate(): void;
 
-    handleChange(event: ChangeEvent<HTMLInputElement>): void;
+    textHandleChange(event: ChangeEvent<HTMLInputElement>): void;
+    checkHandleChange(event: ChangeEvent<HTMLInputElement>): void;
 
     addTask(): void;
 }
+
