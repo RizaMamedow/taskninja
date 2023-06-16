@@ -66,25 +66,15 @@ const App: React.FC = () => {
             method: "GET",
             redirect: "follow",
         };
-    };
 
-    // Delete
-    const deleteTask = (tasksId: number) => {
-        let requestOptions: RequestInit = {
-            method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-
-        fetch(`http://localhost:3030/tasks/${tasksId}`, requestOptions)
+        fetch("http://localhost:3030/tasks", requestOptions)
             .then((response) => response.json())
-            .then((result) => {console.log(`Deleted task`)})
+            .then((result) => setTasksList(result))
             .catch((error) => console.log("error", error));
     };
 
     // Update
-    const completeTask = (tasksId: number) => {
+    const toggleCompleteTask = (tasksId: number) => {
         let task = tasksList.filter((task) => {
             return task.id === tasksId
         })[0];
@@ -105,6 +95,22 @@ const App: React.FC = () => {
             .then((result) => {console.log(`Completed '${result.text}' task`)})
             .catch((error) => console.log("error", error));
     };
+
+    // Delete
+    const deleteTask = (tasksId: number) => {
+        let requestOptions: RequestInit = {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+
+        fetch(`http://localhost:3030/tasks/${tasksId}`, requestOptions)
+            .then((response) => response.json())
+            .then((result) => {console.log(`Deleted task`)})
+            .catch((error) => console.log("error", error));
+    };
+
 
     return (
         <div className="App">
@@ -129,9 +135,7 @@ const App: React.FC = () => {
                                 <h2>Tasks:</h2>
                                 <ListGroup>
                                     {tasksList.map((task: ITask, key: number) => {
-                                        return <ListGroup.Item key={key}>
-                                            <ListItem task={task} deleteTask={deleteTask} completeTask={completeTask}/>
-                                        </ListGroup.Item>
+                                        return <ListItem key={key} task={task} deleteTask={deleteTask} toggleCompleteTask={toggleCompleteTask}/>
                                     })}
                                 </ListGroup>
                             </>

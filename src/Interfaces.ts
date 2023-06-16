@@ -12,7 +12,7 @@ export interface IListItem {
     task: ITask;
 
     deleteTask(taskId: number): void;
-    completeTask(taskId: number): void;
+    toggleCompleteTask(taskId: number): void;
 }
 
 export interface ITaskForm {
@@ -27,4 +27,3 @@ export interface ITaskForm {
 
     addTask(): void;
 }
-

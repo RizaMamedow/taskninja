@@ -23,3 +23,6 @@
 .contact-side .telegram {
     color: #229ED9;
 }
+.smooth-transition {
+    transition: all 0.5s;
+}
