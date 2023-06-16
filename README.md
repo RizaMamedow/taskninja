@@ -3,8 +3,7 @@ A simplest task manager on react typescript and bootstrap
 
 ## Installation
 Run `npm install`.
-Next step: create `db.json` in root of project.
-It's all
+It's all. xD
 
 ## Run
 To run you must run
